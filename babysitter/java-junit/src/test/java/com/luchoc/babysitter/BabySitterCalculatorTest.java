@@ -28,4 +28,19 @@ public class BabySitterCalculatorTest {
     public void whenSitterWorksFromStartToBedTheyGet12DollarsPerHour() { 
         assertEquals(12, calc.charge(18, 19, 0));
     }
+    
+    @Test
+    public void calculatorDoesNotFailWhenStartTimeAfterMidnight() {
+        calc.charge(2,3,3);
+    }
+    
+    @Test
+    public void calculatorDoesNotFailWhenStopTimeBeforeMidnight() { 
+        calc.charge(18, 19, 23);
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void calculatorThrowsExceptionWhenNotUsingMilitaryTime() { 
+        calc.charge(-1,  0,  34); 
+    }
 }
