@@ -3,14 +3,14 @@ package com.luchoc.babysitter;
 public class BabySitterCalculator {
 	 
 	private static final int EARLIEST_START_TIME = 17;
-	private final int RATE_BEFORE_BED = 12; 
-	private final int RATE_AFTER_BED = 8; 
-	private final int RATE_AFTER_MIDNIGHT = 16; 
+	private static final int RATE_BEFORE_BED = 12; 
+	private static final int RATE_AFTER_BED = 8; 
+	private static final int RATE_AFTER_MIDNIGHT = 16; 
 	
 	
 	public int calculate(int startTime, int endTime, int bedTime) {
 		
-		if ((startTime < EARLIEST_START_TIME) && (startTime > 4)) {
+		if (startTime < EARLIEST_START_TIME && startTime > 4) {
 			throw new IllegalArgumentException("Invalid start time.");
 		}
 		

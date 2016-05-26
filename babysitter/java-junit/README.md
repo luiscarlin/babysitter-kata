@@ -1,10 +1,11 @@
 # BabySitter Kata
 
+
 |                   |                             |
 |-------------------|:---------------------------:|
 |  Language         |                     Java 8  |
 |  Build            |         Gradle 2.4 Wrapper  |
-|  Test Framework   |                      JUnit  |
+|  Test Framework   |                    JUnit 4  |
 |  Static Analysis  |  FindBugs, PMD, Checkstyle  |  
 |  Test Coverage    |                     Jacoco  |
 
