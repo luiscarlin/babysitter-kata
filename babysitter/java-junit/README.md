@@ -1,6 +1,7 @@
-# babysitter-kata
+# BabySitter Kata
 
-
+|                   |                             |
+|-------------------|:---------------------------:|
 |  Language         |                     Java 8  |
 |  Build            |         Gradle 2.4 Wrapper  |
 |  Test Framework   |                      JUnit  |
@@ -8,11 +9,14 @@
 |  Test Coverage    |                     Jacoco  |
 
 To build: 
+
     $ ./gradlew build
 
 Jacoco test coverage report
+
     ./build/reports/jacoco/test/html/index.html
 
-Generate Eclipse prroject file
+Generate Eclipse project files
+
     $ ./gradlew eclipse
 
