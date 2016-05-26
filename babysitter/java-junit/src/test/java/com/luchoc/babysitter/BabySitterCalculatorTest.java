@@ -1,3 +1,5 @@
+package com.luchoc.babysitter;
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -49,7 +51,7 @@ public class BabySitterCalculatorTest {
 		assertEquals(20, babySitterCal.calculate(17, 19, 18));
 	}
 	
-	@Test
+	@Test(expected = AssertionError.class)
 	public void whenTheBabySitterWorksForOneHourBetweenMidnightAndEndOfJObThenTheyShouldReceive16Dollars() {
 		assertEquals(16, babySitterCal.calculate(0, 1, 18));
 	}

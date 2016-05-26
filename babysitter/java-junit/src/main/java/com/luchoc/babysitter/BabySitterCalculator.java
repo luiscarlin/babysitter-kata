@@ -1,3 +1,4 @@
+package com.luchoc.babysitter;
 
 public class BabySitterCalculator {
 	 
