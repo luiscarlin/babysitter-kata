@@ -1,3 +1,0 @@
-# babysitter-kata
-
-Code kata
