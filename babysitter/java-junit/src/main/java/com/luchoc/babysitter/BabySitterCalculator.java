@@ -26,7 +26,6 @@ public class BabySitterCalculator {
     }
 
     public int charge(int startTime, int bedTime, int stopTime) {
-        
         validateTimes(startTime, stopTime);
         
         int charge = 0; 

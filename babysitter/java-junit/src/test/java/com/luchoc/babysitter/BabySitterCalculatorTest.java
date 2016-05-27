@@ -26,7 +26,12 @@ public class BabySitterCalculatorTest {
     
     @Test
     public void whenSitterWorksFromStartToBedTheyGet12DollarsPerHour() { 
-        assertEquals(12, calc.charge(18, 19, 0));
+        assertEquals(12, calc.charge(18, 19, 19));
+    }
+    
+    @Test
+    public void whenBedtimeIsPastMidnightCharge12DollarsPerHour() { 
+        //assertEquals(12 * 7, calc.charge(17, 1, 1));
     }
     
     @Test
