@@ -4,11 +4,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BabySitterCalculator {
-    
     private static final int START_LIMIT = 17;
     private static final int STOP_LIMIT = 4; 
     private static final int RATE_BEFORE_BED = 12;
+    private static final int RATE_AFTER_BED_BEFORE_MID = 8;
     private static final int OFFSET_FOR_CALCULATIONS = 24;
+    private static final int MIDNIGHT = 24;
+    private static final int RATE_AFTER_MIN = 16;
     
     private int startTime; 
     private int bedTime; 
@@ -35,9 +37,9 @@ public class BabySitterCalculator {
         }
         
         // verify order
-        int startTimeWithOffset = startTime + (startTime <= STOP_LIMIT ? OFFSET_FOR_CALCULATIONS : 0);
-        int bedTimeWithOffset = bedTime + (bedTime <= STOP_LIMIT ? OFFSET_FOR_CALCULATIONS : 0); 
-        int stopTimeWithOffset = stopTime + (stopTime <= STOP_LIMIT ? OFFSET_FOR_CALCULATIONS : 0); 
+        int startTimeWithOffset = applyOffset(startTime);
+        int bedTimeWithOffset = applyOffset(bedTime);
+        int stopTimeWithOffset = applyOffset(stopTime); 
         
         if (!(startTimeWithOffset <= stopTimeWithOffset && 
                 startTimeWithOffset <= bedTimeWithOffset &&
@@ -52,14 +54,34 @@ public class BabySitterCalculator {
     }
 
     public int calculate() {
+        
+        // apply offset for calculations
+        int startTimeWithOffset = applyOffset(startTime);
+        int bedTimeWithOffset = applyOffset(bedTime);
+        int stopTimeWithOffset = applyOffset(stopTime); 
+        
         int charge = 0; 
         
-        charge += (bedTime - startTime) * RATE_BEFORE_BED;
+        for (int currentTime = startTimeWithOffset; currentTime < stopTimeWithOffset; currentTime++) {
+            if (currentTime < bedTimeWithOffset) { 
+                charge += RATE_BEFORE_BED;
+            }
+            else if (currentTime < MIDNIGHT && stopTimeWithOffset >= MIDNIGHT) { 
+                charge += RATE_AFTER_BED_BEFORE_MID;
+            }
+            else if (currentTime < stopTimeWithOffset){ 
+                charge += RATE_AFTER_MIN;
+            }
+        }
         
         return charge;
     }
     
     private boolean isMilitaryTime(int time) { 
         return time >= 0 && time < 24;
+    }
+    
+    private int applyOffset(int time) { 
+        return time + (time <= STOP_LIMIT ? OFFSET_FOR_CALCULATIONS : 0);
     }
 }

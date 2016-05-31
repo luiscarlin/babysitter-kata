@@ -44,4 +44,10 @@ public class BabySitterCalculatorTest {
     public void calculatorThrowsExceptionWhenNotUsingMilitaryTime() { 
         calc.setTimes(-1,  0,  34); 
     }
+    
+    @Test
+    public void whenSitterWorksFromBedtimeToMidnightTheyReceive8DollarsPerHour() { 
+        calc.setTimes(18, 18, 0);
+        assertEquals(6 * 8, calc.calculate());
+    }
 }
