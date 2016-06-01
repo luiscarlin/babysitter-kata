@@ -1,8 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'jacoco'
-//apply plugin: 'findbugs'
-//apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
 apply plugin: 'pmd'
 
 sourceCompatibility = 1.8
