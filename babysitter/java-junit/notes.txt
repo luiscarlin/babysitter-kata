@@ -6,7 +6,7 @@ Logic:
 ------
 
 Schedule
-- throw exception if startTime < 17
+- throw exception if startTime < 17 
 - throw exception if stopTime > 4
 - so... only work if scheduled [17, 4]
 

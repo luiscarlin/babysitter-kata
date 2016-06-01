@@ -73,7 +73,6 @@ public class BabySitterCalculator {
                 charge += RATE_AFTER_MIN;
             }
         }
-        
         return charge;
     }
     

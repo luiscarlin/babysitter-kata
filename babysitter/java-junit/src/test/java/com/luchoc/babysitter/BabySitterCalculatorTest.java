@@ -50,4 +50,25 @@ public class BabySitterCalculatorTest {
         calc.setTimes(18, 18, 0);
         assertEquals(6 * 8, calc.calculate());
     }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void calculatorThrowsExceptionWhenBedTimeIsBeforeStartTime() { 
+        calc.setTimes(20, 19, 0);
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void calculatorThrowsExceptionWhenStopTimeimeIsBeforeStartTime() { 
+        calc.setTimes(21, 21, 20);
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void calculatorThrowsExceptionWhenStopTimeIsBeforeBedTime() { 
+        calc.setTimes(21, 23, 22);
+    }
+    
+    @Test
+    public void whenSitterWorksFromMidnighttoStopTimeTheyReceive16DollardsPerHour() {
+        calc.setTimes(0, 0, 4);
+        assertEquals(16 * 4, calc.calculate());
+    }
 }
