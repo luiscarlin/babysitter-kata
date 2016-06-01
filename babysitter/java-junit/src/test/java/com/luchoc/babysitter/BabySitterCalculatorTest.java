@@ -41,8 +41,18 @@ public class BabySitterCalculatorTest {
     }
     
     @Test(expected=IllegalArgumentException.class)
-    public void calculatorThrowsExceptionWhenNotUsingMilitaryTime() { 
-        calc.setTimes(-1,  0,  34); 
+    public void calculatorThrowsExceptionWhenATimeIsNegative() { 
+        calc.setTimes(-1,  0, 3); 
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void calculatorThrowsExceptionWhenaATimeIsAbove24() { 
+        calc.setTimes(17,  0, 25); 
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void calculatorThrowsExceptionWhenBothTimeIsNegativeAndAbove24() { 
+        calc.setTimes(-1,  0, 25); 
     }
     
     @Test
