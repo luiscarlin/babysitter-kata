@@ -38,4 +38,4 @@ Jacoco test coverage report
 
 Generate IntelliJ IDEA project files:
 
-    $ ./gradlew IDEA
+    $ ./gradlew idea

@@ -27,6 +27,7 @@ Project Info
 |  Test Framework   |                    JUnit 4  |
 |  Static Analysis  |  FindBugs, PMD, Checkstyle  |  
 |  Test Coverage    |                     Jacoco  |
+|  IDE              |               Eclipse Mars  |
 
 To build: 
 
