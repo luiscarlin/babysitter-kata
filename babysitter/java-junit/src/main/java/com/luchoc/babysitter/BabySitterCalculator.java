@@ -55,7 +55,7 @@ public class BabySitterCalculator {
 
     public int calculate() {
         
-        // apply offset for calculations
+        // add 24 to numbers less than 4 to make calculations easier
         int startTimeWithOffset = applyOffset(startTime);
         int bedTimeWithOffset = applyOffset(bedTime);
         int stopTimeWithOffset = applyOffset(stopTime); 
@@ -66,10 +66,10 @@ public class BabySitterCalculator {
             if (currentTime < bedTimeWithOffset) { 
                 charge += RATE_BEFORE_BED;
             }
-            else if (currentTime < MIDNIGHT && stopTimeWithOffset >= MIDNIGHT) { 
+            else if (currentTime < MIDNIGHT) { 
                 charge += RATE_AFTER_BED_BEFORE_MID;
             }
-            else if (currentTime < stopTimeWithOffset){ 
+            else { 
                 charge += RATE_AFTER_MIN;
             }
         }

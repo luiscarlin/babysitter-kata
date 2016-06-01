@@ -81,4 +81,24 @@ public class BabySitterCalculatorTest {
         calc.setTimes(0, 0, 4);
         assertEquals(16 * 4, calc.calculate());
     }
+    
+    @Test
+    public void whenSitterWorks3HoursFromStartToBed4HoursFromBedToMidAnd1HourFromMidToBedTheyGet100Dollars() {
+        
+        // start - bed -> 3 hours (12)
+        // bed - mid -> 4 hours (8)
+        // mid - end -> 1 hour (16) 
+        calc.setTimes(17, 20, 1);
+        assertEquals(3 * 12 + 4 * 8 + 16, calc.calculate());
+    }
+    
+    @Test
+    public void when() {
+        
+        // start - bed -> 3 hours (12)
+        // bed - mid -> 2 hours (8)
+        // mid - end -> 1 hour (16) 
+        calc.setTimes(17, 20, 22);
+        assertEquals(3 * 12 + 2 * 8, calc.calculate());
+    }
 }
