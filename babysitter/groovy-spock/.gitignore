@@ -1,13 +1,19 @@
-# gradle files 
+# Gradle
 .gradle/
 build/
 
-# eclipse
+# Eclipse
 .classpath
 .project
 .settings/
 
-# java
+# IDEA
+*.iws
+*.ipr
+*.iml
+out/
+
+# Java
 *.class
 
 # Mobile Tools for Java (J2ME)

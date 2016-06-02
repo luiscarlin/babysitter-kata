@@ -27,6 +27,7 @@ Project Info
 |  Test Framework   |                    Spock    |
 |  Static Analysis  |  FindBugs, PMD, Checkstyle  |  
 |  Test Coverage    |                     Jacoco  |
+|  IDE              |      IntelliJ IDEA CE 2016  |
 
 To build: 
 
