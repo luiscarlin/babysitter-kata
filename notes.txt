@@ -1,0 +1,23 @@
+Notes
+-----
+- use military time 
+
+Logic:
+------
+
+Schedule
+- throw exception if startTime < 17 
+- throw exception if stopTime > 4
+- so... only work if scheduled [17, 4]
+
+Rate
+- start - bed 	-> 12/hour
+- bed - 0		-> 8/hour
+- 0 - end 		-> 16/hour
+- paid for full hours... so ceiling on the hours 
+
+
+Inputs
+- starttime
+- stopTime
+- bedTime
